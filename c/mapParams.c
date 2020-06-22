@@ -13,7 +13,7 @@ const double BIASMAX = 4;
 const double WEIGHTMIN = -10;
 const double WEIGHTMAX = 10;
 
-const double TCMIN = 0.1;
+const double TCMIN = 1;
 const double TCMAX = 3;
 
 const double SINECOEFFICIENTMIN = 0;

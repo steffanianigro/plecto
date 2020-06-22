@@ -26,7 +26,6 @@ typedef struct ConfigDesc {
     ConfigNode *hNodes;
     int numINodes;
     int numHNodes;
-    int numONodes;
     char *tag;
 } ConfigDesc;
     
@@ -38,7 +37,7 @@ typedef struct ConfigData {
 
 void destroyConfigData(ConfigData *configData);
 
-void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes, int numberONodes);
+void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes);
 
 #ifdef __cplusplus 
 }

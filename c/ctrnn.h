@@ -38,7 +38,7 @@ void initialiseCTRNN(CTRNN *ctrnn, ConfigDesc *configDesc, double timeStep);
 
 void feedCTRNNInputs(CTRNN *ctrnn, double inputs[]);
 
-void getCTRNNOutput(CTRNN *ctrnn, double * outputs);
+void getCTRNNOutput(CTRNN *ctrnn, double * outputs, int numOutputNodes);
 
 void updateCTRNN(CTRNN *ctrnn);
 

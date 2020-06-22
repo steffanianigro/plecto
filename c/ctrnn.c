@@ -16,7 +16,7 @@ void initialiseCTRNN(CTRNN *ctrnn, ConfigDesc *configDesc, double timeStep){
     ctrnn->hNodes = (LI *)malloc(sizeof(LI) * configDesc->numHNodes);
     ctrnn->numINodes = configDesc->numINodes;
     ctrnn->numHNodes = configDesc->numHNodes;
-    ctrnn->numONodes = configDesc->numONodes;
+    // Num output nodes is defined in code and cannot exceed hidden nodes.
     
     // Input Nodes
     int node;
@@ -89,8 +89,7 @@ void updateCTRNN(CTRNN *ctrnn){
     }
 }
 // Get CTRNN outputs.
-void getCTRNNOutput(CTRNN *ctrnn, double * outputs){
-    int numOutputNodes = ctrnn->numONodes;
+void getCTRNNOutput(CTRNN *ctrnn, double * outputs, int numOutputNodes){
     int i;
     for (i = 0; i < numOutputNodes; i++) {
         outputs[i] = getActivation(&ctrnn->hNodes[i]);

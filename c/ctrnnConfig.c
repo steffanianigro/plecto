@@ -4,13 +4,12 @@
 
 #include "ctrnnConfig.h"
 
-void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes, int numberONodes){
+void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes){
     // Assign membery for config description elements.
     configDesc->iNodes = (ConfigNode *)malloc(sizeof(ConfigNode) * numINodes);
     configDesc->hNodes = (ConfigNode *)malloc(sizeof(ConfigNode) * numberHNodes);
     configDesc->numINodes = numINodes;
     configDesc->numHNodes = numberHNodes;
-    configDesc->numONodes = numberONodes;
 }
 
 void initConfigArray(ConfigData *configData, int numINodes, int numberHNodes, int numberONodes){

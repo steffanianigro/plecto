@@ -1,6 +1,6 @@
 # ctrnnSynth
 
-This project is a Javascript, C and Max/MSP package for audio synthesis using Continuous Time Recurrent Neural Networks (CTRNN).
+This project consists of C and Java libraries for audio synthesis and event generation using Continuous Time Recurrent Neural Networks (CTRNN).
 The code and documentation are still under development.
 
 ## Motivation

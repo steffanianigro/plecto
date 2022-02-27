@@ -16,15 +16,15 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
   // Feed in CTRNN inputs as an array of doubles.
   feedCTRNNInputs(ctrnn, inputs);
   // Update CTRNN.
-  updateCTRNN(ctrnn)
+  updateCTRNN(ctrnn);
   // Get CTRNN outputs by passing in a pointer to an array of doubles and an integer representing the number of output nodes.
-  getCTRNNOutput(ctrnn, outputs, numOutputNodes)
+  getCTRNNOutput(ctrnn, outputs, numOutputNodes);
   // Reset CTRNN to starting values.
-  resetCTRNN(ctrnn)
+  resetCTRNN(ctrnn);
   // Change time step parameter (float).
-  changeCTRNNTimestep(ctrnn, timeStep)
+  changeCTRNNTimestep(ctrnn, timeStep);
   // Free memory allocation.
-  destroyCTRNN(ctrnn)
+  destroyCTRNN(ctrnn);
   ```
 
 - **Java**
@@ -37,13 +37,13 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
   // Feed in CTRNN inputs as an array of floats.
   ctrnn.feedCTRNNInputs(inputs);
   // Update CTRNN.
-  ctrnn.updateCTRNN(ctrnn)
+  ctrnn.updateCTRNN(ctrnn);
   // Get CTRNN outputs by passing in the number of output nodes (int).
-  ctrnn.getOutput(numOutputNodes)
+  ctrnn.getOutput(numOutputNodes);
   // Reset CTRNN to starting values.
   ctrnn.reset()
   // Change time step (float).
-  ctrnn.changeTimeStep(timeStep)
+  ctrnn.changeTimeStep(timeStep);
   ```
 
 If you have any issues utilising these libraries, please contact me via plectomusic.com.

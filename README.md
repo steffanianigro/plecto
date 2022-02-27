@@ -1,10 +1,8 @@
-# ctrnnSynth
-
-This project consists of C and Java libraries for audio synthesis and event generation using Continuous Time Recurrent Neural Networks (CTRNN).
+# Plecto
 
 ## Motivation
 
-This is a research project that explores the use of Continuous Time Recurrent Neural Networks (CTRNN) as a non-linear low frequency oscillator. Included is C and Java source code that can be used with the plectomusic.com API.
+This is a research project that explores the use of Continuous Time Recurrent Neural Networks (CTRNNs) as a low-frequency oscillator (LFO). Included is C and Java source code that can be used with the plectomusic.com API.
 
 ## Installation
 

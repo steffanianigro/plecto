@@ -10,10 +10,43 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
 
   Include the **ctrnn.h**, **leakyIntegrator.h**, **mapParams.h** and **ctrnnConfig.h** files into your project.
 
+  ```c
+  // Initialise by passing in CTRNN structure, parsed JSON configuration (ConfigDesc structure) and time step value (double). You can use a library like Parson (https://github.com/kgabis/parson) to deserialise the JSON configuration.
+  initialiseCTRNN(ctrnn, configuration, timeStep);
+  // Feed in CTRNN inputs as an array of doubles.
+  feedCTRNNInputs(ctrnn, inputs);
+  // Update CTRNN.
+  updateCTRNN(ctrnn)
+  // Get CTRNN outputs by passing in a pointer to an array of doubles and an integer representing the number of output nodes.
+  getCTRNNOutput(ctrnn, outputs, numOutputNodes)
+  // Reset CTRNN to starting values.
+  resetCTRNN(ctrnn)
+  // Change time step parameter (float).
+  changeCTRNNTimestep(ctrnn, timeStep)
+  // Free memory allocation.
+  destroyCTRNN(ctrnn)
+  ```
+
 - **Java**
 
    Include the **CTRNN.java**, **LeakyIntegrator.java** and **Params.java** files into your project.
 
+  ```java
+  // Initialise by passing in timeStep (float) and a serialised JSON CTRNN configuration.
+  CTRNN ctrnn = new CTRNN(timeStep, ctrnn);
+  // Feed in CTRNN inputs as an array of floats.
+  ctrnn.feedCTRNNInputs(inputs);
+  // Update CTRNN.
+  ctrnn.updateCTRNN(ctrnn)
+  // Get CTRNN outputs by passing in the number of output nodes (int).
+  ctrnn.getOutput(numOutputNodes)
+  // Reset CTRNN to starting values.
+  ctrnn.reset()
+  // Change time step (float).
+  ctrnn.changeTimeStep(timeStep)
+  ```
+
+If you have any issues utilising these libraries, please contact me via plectomusic.com.
 
 ## MIT License
 

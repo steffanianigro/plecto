@@ -2,7 +2,7 @@
 
 ## Motivation
 
-This is a research project that explores the use of Continuous Time Recurrent Neural Networks (CTRNNs) as a low-frequency oscillator (LFO). Included is C and Java source code that can be used with the plectomusic.com API.
+This is a research project that explores the use of Continuous Time Recurrent Neural Networks (CTRNNs) as a low-frequency oscillator (LFO). Included in this repository are C and Java libraries that can be used with the plectomusic.com API.
 
 ___
 ### Usage
@@ -23,11 +23,11 @@ Initialise CTRNN:
 
 Loop the following logic:
 ```c
-  // Feed in CTRNN inputs as an array of doubles. If using the plecto API, four values should be passed in (the number of input nodes).
+  // Feed in CTRNN inputs as an array of doubles. If using the Plecto API, four values should be passed in (the number of input nodes).
   feedCTRNNInputs(ctrnn, inputs);
   // Update CTRNN.
   updateCTRNN(ctrnn);
-  // Get CTRNN outputs by passing in a pointer to an array of doubles and an integer representing the number of output nodes (this can be any integer value up to the number of CTRNN hidden nodes). If using the Plecto API, 6 is the reccomended number of outputs.
+  // Get CTRNN outputs by passing in a pointer to an array of doubles and an integer representing the number of output nodes (this can be any integer value up to the number of CTRNN hidden nodes). If using the Plecto API, 6 is the recommended number of outputs.
   getCTRNNOutput(ctrnn, outputs, numOutputNodes);
 ```
 
@@ -56,11 +56,11 @@ Initialise CTRNN:
 
 Loop the following logic:
 ```java
-  // Feed in CTRNN inputs as an array of floats. If using the plecto API, four values should be passed in (the number of input nodes).
+  // Feed in CTRNN inputs as an array of floats. If using the Plecto API, four values should be passed in (the number of input nodes).
   ctrnn.feedCTRNNInputs(inputs);
   // Update CTRNN.
   ctrnn.updateCTRNN(ctrnn);
-  // Get CTRNN outputs by passing in the number of output nodes (this can be any integer value up to the number of CTRNN hidden nodes). If using the Plecto API, 6 is the reccomended number of outputs.
+  // Get CTRNN outputs by passing in the number of output nodes (this can be any integer value up to the number of CTRNN hidden nodes). If using the Plecto API, 6 is the recommended number of outputs.
   ctrnn.getOutput(numOutputNodes);
 ```
 

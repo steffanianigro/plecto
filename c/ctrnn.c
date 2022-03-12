@@ -8,7 +8,7 @@
 void initialiseCTRNN(CTRNN *ctrnn, ConfigDesc *configDesc, double timeStep){
     // If CTRNN initialed, destroy the CTRNN.
     if(ctrnn->initialised){
-        ctrnn->initialised = false;
+        ctrnn->initialised = 0;
         destroyCTRNN(ctrnn);
     }
     // Assign memory for CTRNN.
@@ -55,7 +55,7 @@ void initialiseCTRNN(CTRNN *ctrnn, ConfigDesc *configDesc, double timeStep){
         // Initiliase start state.
         initialiseLI(&ctrnn->hNodes[node], numInputs, timeStep);
     }
-    ctrnn->initialised = true;
+    ctrnn->initialised = 1;
 }
 // Feed CTRNN inputs.
 void feedCTRNNInputs(CTRNN *ctrnn, double inputs[]){
@@ -119,13 +119,26 @@ void changeCTRNNTimestep(CTRNN *ctrnn, double timeStep){
 void destroyCTRNN(CTRNN *ctrnn){
     int node;
     for(node = 0; node < ctrnn->numINodes; node++){
-        free(ctrnn->iNodes[node].weigths);
-        free(ctrnn->iNodes[node].inputs);
+        if(ctrnn->iNodes[node].weigths){
+            free(ctrnn->iNodes[node].weigths);
+        }
+        if(ctrnn->iNodes[node].inputs){
+            free(ctrnn->iNodes[node].inputs);
+        }
     }
     for(node = 0; node < ctrnn->numHNodes; node++){
-        free(ctrnn->hNodes[node].weigths);
-        free(ctrnn->hNodes[node].inputs);
+        if(ctrnn->hNodes[node].weigths){
+            free(ctrnn->hNodes[node].weigths);
+        }
+        if(ctrnn->hNodes[node].inputs){
+            free(ctrnn->hNodes[node].inputs);
+        }
     }
-    free(ctrnn->iNodes);
-    free(ctrnn->hNodes);
+    if(ctrnn->iNodes){
+        free(ctrnn->iNodes);
+    }
+    if(ctrnn->hNodes){
+        free(ctrnn->hNodes);
+    }
+    ctrnn->initialised = false;
 }

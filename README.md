@@ -8,9 +8,9 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
 
 - **C**
 
-  Include the **ctrnn.h**, **leakyIntegrator.h**, **mapParams.h** and **ctrnnConfig.h** files into your project.
+Include the **ctrnn.h**, **leakyIntegrator.h**, **mapParams.h** and **ctrnnConfig.h** files into your project.
 
-  ```c
+```c
   // Initialise by passing in CTRNN structure, parsed JSON configuration (ConfigDesc structure) and time step value (double). You can use a library like Parson (https://github.com/kgabis/parson) to deserialise the JSON configuration.
   initialiseCTRNN(ctrnn, configuration, timeStep);
   // Feed in CTRNN inputs as an array of doubles.
@@ -25,13 +25,13 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
   changeCTRNNTimestep(ctrnn, timeStep);
   // Free memory allocation.
   destroyCTRNN(ctrnn);
-  ```
+```
 
 - **Java**
 
-   Include the **CTRNN.java**, **LeakyIntegrator.java** and **Params.java** files into your project.
+Include the **CTRNN.java**, **LeakyIntegrator.java** and **Params.java** files into your project.
 
-  ```java
+```java
   // Initialise by passing in timeStep (float) and a serialised JSON CTRNN configuration.
   CTRNN ctrnn = new CTRNN(timeStep, ctrnn);
   // Feed in CTRNN inputs as an array of floats.
@@ -44,7 +44,7 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
   ctrnn.reset()
   // Change time step (float).
   ctrnn.changeTimeStep(timeStep);
-  ```
+```
 
 If you have any issues utilising these libraries, please contact me via plectomusic.com.
 

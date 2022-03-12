@@ -12,8 +12,9 @@ void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes){
     configDesc->numHNodes = numberHNodes;
 }
 
-void initConfigArray(ConfigData *configData, int numINodes, int numberHNodes, int numberONodes){
-    configData->configDescriptions = (ConfigDesc *)malloc(sizeof(ConfigDesc) * numINodes);
+void initConfigData(ConfigData *configData, int numConfigs){
+    configData->configDescriptions = (ConfigDesc *)malloc(sizeof(ConfigDesc) * numConfigs);
+    configData->numConfigs = numConfigs;
 }
 
 void destroyConfigData(ConfigData *configData){
@@ -23,16 +24,26 @@ void destroyConfigData(ConfigData *configData){
         // Free input node weights.
         int index;
         for(index = 0; index < configData->configDescriptions[config].numINodes; index++){
-            free(configData->configDescriptions[config].iNodes[index].weigths);
+            if(configData->configDescriptions[config].iNodes[index].weigths){
+                free(configData->configDescriptions[config].iNodes[index].weigths);
+            }
         }
         // Free hidden node weights.
         for(index = 0; index < configData->configDescriptions[config].numHNodes; index++){
-            free(configData->configDescriptions[config].hNodes[index].weigths);
+            if(configData->configDescriptions[config].hNodes[index].weigths){
+                free(configData->configDescriptions[config].hNodes[index].weigths);
+            }
         }
         // Free config description nodes.
-        free(configData->configDescriptions[config].iNodes);
-        free(configData->configDescriptions[config].hNodes);
+        if(configData->configDescriptions[config].iNodes){
+            free(configData->configDescriptions[config].iNodes);
+        }
+        if(configData->configDescriptions[config].hNodes){
+            free(configData->configDescriptions[config].hNodes);
+        }
     }
     // Free config description.
-    free(configData->configDescriptions);
+    if(configData->configDescriptions){
+        free(configData->configDescriptions);
+    }
 }

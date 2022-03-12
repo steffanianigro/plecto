@@ -9,8 +9,6 @@
 extern "C" { 
 #endif
     
-#include "ext.h"            // standard Max include, always required (except in Jitter)
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

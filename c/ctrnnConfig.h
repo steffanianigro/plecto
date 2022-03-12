@@ -32,10 +32,12 @@ typedef struct ConfigDesc {
 typedef struct ConfigData {
     ConfigDesc *configDescriptions;
     int numConfigs;
-    Boolean initialised;
+    int initialised;
 } ConfigData;
 
 void destroyConfigData(ConfigData *configData);
+    
+void initConfigData(ConfigData *configData, int numConfigs);
 
 void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes);
 

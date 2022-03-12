@@ -8,9 +8,7 @@
 #ifdef __cplusplus 
 extern "C" { 
 #endif
-    
-#include "ext.h"            // standard Max include, always required (except in Jitter)
-    
+        
 #include <stdio.h>
 #include <stdlib.h>
 #include "mapParams.h"
@@ -24,7 +22,7 @@ typedef struct CTRNN {
     int numINodes;
     int numHNodes;
     int numONodes;
-    Boolean initialised;
+    int initialised;
 
 } CTRNN;
 

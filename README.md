@@ -4,8 +4,9 @@
 
 This is a research project that explores the use of Continuous Time Recurrent Neural Networks (CTRNNs) as a low-frequency oscillator (LFO). Included is C and Java source code that can be used with the plectomusic.com API.
 
+___
 ### Usage
-
+___
 **C**
 
 Include the **ctrnn.h**, **ctrnnConfig.h** and **jsonUtils.h** files into your project.
@@ -40,6 +41,7 @@ Additional functions:
   destroyCTRNN(ctrnn);
 ```
 
+___
 ### **Java**
 
 Include the **CTRNN.java**, **LeakyIntegrator.java** and **Params.java** files into your project.

@@ -8,7 +8,7 @@
 #ifdef __cplusplus 
 extern "C" { 
 #endif
-    
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -25,7 +25,7 @@ typedef struct LI {
     double frequencyMultiplier; // For sin transfer fund (frequency).
     double y; // Activation to pass into transfer function with gain and bias.
     double *inputs;
-    double *weigths;
+    double *weights;
     int numInputs;
     double tempOutput;
     double output;

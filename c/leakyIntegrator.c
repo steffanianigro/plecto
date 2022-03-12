@@ -17,7 +17,7 @@ void calculateOutput(LI *node){
     double yDot = -1 * node->y;
     int input;
     for(input = 0; input < node->numInputs; input++){
-        yDot += node->inputs[input] * node->weigths[input];
+        yDot += node->inputs[input] * node->weights[input];
     }
     yDot /= node->t;
     node->y += yDot * node->timeStep;

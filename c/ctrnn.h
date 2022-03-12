@@ -8,7 +8,7 @@
 #ifdef __cplusplus 
 extern "C" { 
 #endif
-        
+    
 #include <stdio.h>
 #include <stdlib.h>
 #include "mapParams.h"
@@ -17,13 +17,12 @@ extern "C" {
 
 typedef struct CTRNN {
 
-    LI *hNodes;
-    LI *iNodes;
-    int numINodes;
-    int numHNodes;
-    int numONodes;
+    LI *hiddenNodes;
+    LI *inputNodes;
+    int numInputNodes;
+    int numHiddenNodes;
     int initialised;
-
+    
 } CTRNN;
 
 void destroyCTRNN(CTRNN *ctrnn);

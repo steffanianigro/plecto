@@ -8,10 +8,12 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
 
 - **C**
 
-Include the **ctrnn.h**, **leakyIntegrator.h**, **mapParams.h** and **ctrnnConfig.h** files into your project.
+Include the **ctrnn.h**, **ctrnnConfig.h** and **jsonUtils.h** files into your project.
 
 ```c
-  // Initialise by passing in CTRNN structure, parsed JSON configuration (ConfigDesc structure) and time step value (double). You can use a library like Parson (https://github.com/kgabis/parson) to deserialise the JSON configuration.
+  // Convert serialised JSON to ConfigDesc structure.
+  renderCTRNNConfigs(configDesc, jsonCtrnnConfig, 1);
+  // Initialise by passing in CTRNN structure, and  parsed JSON configuration (ConfigDesc structure).
   initialiseCTRNN(ctrnn, configuration, timeStep);
   // Feed in CTRNN inputs as an array of doubles.
   feedCTRNNInputs(ctrnn, inputs);

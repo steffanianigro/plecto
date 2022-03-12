@@ -18,14 +18,14 @@ typedef struct ConfigNode {
     double t;
     double sineCoefficient;
     double frequencyMultiplier;
-    double *weigths;
+    double *weights;
 } ConfigNode;
 
 typedef struct ConfigDesc {
-    ConfigNode *iNodes;
-    ConfigNode *hNodes;
-    int numINodes;
-    int numHNodes;
+    ConfigNode *inputNodes;
+    ConfigNode *hiddenNodes;
+    int numInputNodes;
+    int numHiddenNodes;
     char *tag;
 } ConfigDesc;
     
@@ -39,7 +39,7 @@ void destroyConfigData(ConfigData *configData);
     
 void initConfigData(ConfigData *configData, int numConfigs);
 
-void initConfigDesc(ConfigDesc *configDesc, int numINodes, int numberHNodes);
+void initConfigDesc(ConfigDesc *configDesc, int numInputNodes, int numberHiddenNodes);
 
 #ifdef __cplusplus 
 }

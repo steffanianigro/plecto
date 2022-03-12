@@ -13,7 +13,7 @@ Include the **ctrnn.h**, **ctrnnConfig.h** and **jsonUtils.h** files into your p
 ```c
   // Convert serialised JSON to ConfigDesc structure.
   renderCTRNNConfigs(configDesc, jsonCtrnnConfig, 1);
-  // Initialise by passing in CTRNN structure, and  parsed JSON configuration (ConfigDesc structure).
+  // Initialise by passing in CTRNN structure, and parsed JSON configuration (ConfigDesc structure).
   initialiseCTRNN(ctrnn, configuration, timeStep);
   // Feed in CTRNN inputs as an array of doubles.
   feedCTRNNInputs(ctrnn, inputs);
@@ -23,7 +23,7 @@ Include the **ctrnn.h**, **ctrnnConfig.h** and **jsonUtils.h** files into your p
   getCTRNNOutput(ctrnn, outputs, numOutputNodes);
   // Reset CTRNN to starting values.
   resetCTRNN(ctrnn);
-  // Change time step parameter (float).
+  // Change time step parameter (double).
   changeCTRNNTimestep(ctrnn, timeStep);
   // Free memory allocation.
   destroyCTRNN(ctrnn);

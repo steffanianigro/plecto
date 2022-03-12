@@ -4,7 +4,7 @@
 
 #include "jsonUtils.h"
 
-void renderCTRNNConfigs(ConfigData *configData, char *json, int numberCTRNNInputs){
+void renderCTRNNConfigs(ConfigData *configData, char *json){
 
     int inputNodes = 0;
     int hiddenNodes = 0;
@@ -70,7 +70,7 @@ void renderCTRNNConfigs(ConfigData *configData, char *json, int numberCTRNNInput
                 }
             }
             // Assign memory for number of weights.
-            configData->configDescriptions[i].inputNodes[node].weights = (double *)malloc(sizeof(double) * numberCTRNNInputs);
+            configData->configDescriptions[i].inputNodes[node].weights = (double *)malloc(sizeof(double) * 1);
             // Get weight array. There is always only one for input nodes.
             JSON_Array *weightArray = json_object_get_array(inputNode, "w");
             double paramVal = json_array_get_number(weightArray, 0);

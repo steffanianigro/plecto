@@ -16,7 +16,7 @@ extern "C" {
 #include "ctrnnConfig.h"
     
 
-void renderCTRNNConfigs(ConfigData *configData, char *json, int numberCTRNNInputs);
+void renderCTRNNConfigs(ConfigData *configData, char *json);
     
 char * extractConfigData(char *json);
 

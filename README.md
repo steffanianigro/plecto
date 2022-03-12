@@ -10,17 +10,28 @@ This is a research project that explores the use of Continuous Time Recurrent Ne
 
 Include the **ctrnn.h**, **ctrnnConfig.h** and **jsonUtils.h** files into your project.
 
+You can pass the JSON response directly from the Plecto API (**https://api.plectomusic.com/profile?profile=plecto**) into the renderCTRNNConfigs function as the jsonCtrnnConfigs argument.
+
+Initialise CTRNN:
 ```c
-  // Convert serialised JSON to ConfigDesc structure.
-  renderCTRNNConfigs(configDesc, jsonCtrnnConfig, 1);
-  // Initialise by passing in CTRNN structure, and parsed JSON configuration (ConfigDesc structure).
+  // Convert serialised JSON to ConfigData structure that contains the parsed CTRNN configurations as ConfigDesc structures for use when initialising the CTRNN structure.
+  renderCTRNNConfigs(configData, jsonCtrnnConfigs);
+  // Initialise the CTRNN structure by passing in a single parsed CTRNN configuration (ConfigDesc structure) from the configData and the timeStep (double) parameter. Use a timeStep value of 0.01 and adjust accordingly.
   initialiseCTRNN(ctrnn, configuration, timeStep);
-  // Feed in CTRNN inputs as an array of doubles.
+```
+
+Loop the following logic:
+```c
+  // Feed in CTRNN inputs as an array of doubles. If using the plecto API, four values should be passed in (the number of input nodes).
   feedCTRNNInputs(ctrnn, inputs);
   // Update CTRNN.
   updateCTRNN(ctrnn);
-  // Get CTRNN outputs by passing in a pointer to an array of doubles and an integer representing the number of output nodes.
+  // Get CTRNN outputs by passing in a pointer to an array of doubles and an integer representing the number of output nodes (this can be any integer value up to the number of CTRNN hidden nodes). If using the Plecto API, 6 is the reccomended number of outputs.
   getCTRNNOutput(ctrnn, outputs, numOutputNodes);
+```
+
+Additional functions:
+```c
   // Reset CTRNN to starting values.
   resetCTRNN(ctrnn);
   // Change time step parameter (double).
@@ -33,15 +44,26 @@ Include the **ctrnn.h**, **ctrnnConfig.h** and **jsonUtils.h** files into your p
 
 Include the **CTRNN.java**, **LeakyIntegrator.java** and **Params.java** files into your project.
 
+This library does not accept the response from the Plecto API but a single JSON CTRNN configuration that can be derived from the API response.
+
+Initialise CTRNN:
 ```java
-  // Initialise by passing in timeStep (float) and a serialised JSON CTRNN configuration.
+  // Initialise by passing in the timeStep (float) parameter and a serialised JSON CTRNN configuration. Use a timeStep value of 0.01 and adjust accordingly.
   CTRNN ctrnn = new CTRNN(timeStep, ctrnn);
-  // Feed in CTRNN inputs as an array of floats.
+```
+
+Loop the following logic:
+```java
+  // Feed in CTRNN inputs as an array of floats. If using the plecto API, four values should be passed in (the number of input nodes).
   ctrnn.feedCTRNNInputs(inputs);
   // Update CTRNN.
   ctrnn.updateCTRNN(ctrnn);
-  // Get CTRNN outputs by passing in the number of output nodes (int).
+  // Get CTRNN outputs by passing in the number of output nodes (this can be any integer value up to the number of CTRNN hidden nodes). If using the Plecto API, 6 is the reccomended number of outputs.
   ctrnn.getOutput(numOutputNodes);
+```
+
+Additional functions:
+```java
   // Reset CTRNN to starting values.
   ctrnn.reset()
   // Change time step (float).

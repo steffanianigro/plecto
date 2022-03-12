@@ -15,7 +15,7 @@ You can pass the JSON response directly from the Plecto API (**https://api.plect
 
 Initialise CTRNN:
 ```c
-  // Convert serialised JSON to ConfigData structure that contains the parsed CTRNN configurations as ConfigDesc structures for use when initialising the CTRNN structure.
+  // Convert serialised JSON to the ConfigData structure that contains the parsed CTRNN configurations as ConfigDesc structures for use when initialising the CTRNN structure.
   renderCTRNNConfigs(configData, jsonCtrnnConfigs);
   // Initialise the CTRNN structure by passing in a single parsed CTRNN configuration (ConfigDesc structure) from the configData and the timeStep (double) parameter. Use a timeStep value of 0.01 and adjust accordingly.
   initialiseCTRNN(ctrnn, configuration, timeStep);
